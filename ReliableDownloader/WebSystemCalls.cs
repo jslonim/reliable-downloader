@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace ReliableDownloader
         {
             using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, url))
             {
-                return await _client.SendAsync(httpRequestMessage, token).ConfigureAwait(continueOnCapturedContext: false);
+                return await _client.SendAsync(httpRequestMessage, HttpCompletionOption.ResponseHeadersRead, token).ConfigureAwait(continueOnCapturedContext: false);
             }
         }
 
@@ -27,7 +28,7 @@ namespace ReliableDownloader
             using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, url))
             {
                 httpRequestMessage.Headers.Range = new RangeHeaderValue(from, to);
-                return await _client.SendAsync(httpRequestMessage, token).ConfigureAwait(continueOnCapturedContext: false);
+                return await _client.SendAsync(httpRequestMessage, HttpCompletionOption.ResponseHeadersRead, token).ConfigureAwait(continueOnCapturedContext: false);
             }
         }
     }
