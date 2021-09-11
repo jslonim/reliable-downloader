@@ -16,8 +16,10 @@ I downloaded the exercise on thursday to have a look but started working on it t
 
 
 ## What would you add if you had more time and how?
--I would add more tests, 
+-I would add more tests. 
+
 -Analyze the code to include every possible defensive code meassure (validations, null checkings, etc)
+
 -Using dependency injection instead of creating an instance of the service.
 
 
