@@ -14,6 +14,8 @@ Also verification with MD5 to check the file was downloaded correctly, as seen i
 ## How long did you spend on the exercise?
 I downloaded the exercise on thursday to have a look but started working on it today (Friday), it took me between 4 and 5 hours. I tried an approach for interrupting the request made with HttpCompletionOption.ResponseHeadersRead with a timer since it wont throw an exception due to the completion of the request (even though the content keeps streaming). I kept it because it allows me to write on real time, show the user the progress and also goes on by itself if the connection comes back since it does not obey timeout.
 
+Visual studio used: Community 2022 Preview version (64 bits) : There shouldn't be any compatibility issues for reviews to run the project, but if for some reason there are, let me know.
+
 
 ## What would you add if you had more time and how?
 -I would add more tests. 
