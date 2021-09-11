@@ -18,6 +18,6 @@ namespace ReliableDownloader
         /// <param name="from">From value, in bytes</param>
         /// <param name="to">From value, in bytes</param>
         /// <returns></returns>
-        Task<HttpResponseMessage> DownloadPartialContent(string url, long from, long to, CancellationToken token);
+        Task<HttpResponseMessage> DownloadPartialContent(string url, long? from, long? to, CancellationToken token);
     }
 }
